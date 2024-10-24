@@ -12,14 +12,22 @@
 from BaseRunner import BaseRunner
 
 
-class Verible(BaseRunner):
+class svp(BaseRunner):
     def __init__(self):
-        super().__init__("verible", "verible-verilog-syntax", {"parsing"})
+        super().__init__("svp", "svp", {"preprocessing", "parsing"})
 
-        self.submodule = "third_party/tools/verible"
-        self.url = f"https://github.com/chipsalliance/verible/tree/{self.get_commit()}"
+        #self.submodule = "../"
+        #self.url = f"https://github.com/dalance/sv-parser/tree/{self.get_commit()}"
 
     def prepare_run_cb(self, tmp_dir, params):
         self.cmd = [self.executable]
+
+        #for incdir in params['incdirs']:
+        #    self.cmd.append('--include')
+        #    self.cmd.append(incdir)
+
+        #for define in params['defines']:
+        #    self.cmd.append('--define')
+        #    self.cmd.append(define)
 
         self.cmd += params['files']
