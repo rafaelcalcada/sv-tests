@@ -12,9 +12,9 @@
 from BaseRunner import BaseRunner
 
 
-class svp(BaseRunner):
+class svv(BaseRunner):
     def __init__(self):
-        super().__init__("svp", "svp", {"preprocessing", "parsing"})
+        super().__init__("svv", "svv", {"preprocessing", "parsing"})
 
         #self.submodule = "../"
         #self.url = f"https://github.com/dalance/sv-parser/tree/{self.get_commit()}"

@@ -14,16 +14,14 @@ CDIR := $(abspath conf)
 
 .PHONY: runners
 
-# svp
-svp: $(INSTALL_DIR)/bin/svp
+# svv
+svv: $(INSTALL_DIR)/bin/svv
 
-$(INSTALL_DIR)/bin/svp:
-	pwd
-	make -C ../
-	install -D ../svp $@
+$(INSTALL_DIR)/bin/svv:
+	@cd ../ && ./configure && make && make install
 
 # setup the dependencies
-RUNNERS_TARGETS := svp
+RUNNERS_TARGETS := svv
 .PHONY: $(RUNNERS_TARGETS)
 
 runners: $(RUNNERS_TARGETS)
